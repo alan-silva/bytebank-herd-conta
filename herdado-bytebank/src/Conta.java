@@ -10,6 +10,8 @@ public class Conta {
 	private Cliente titular ;
 	private static int total = 0; // Atributo compartilhado
 	
+	
+	
 	public Conta(int agencia, int numero) {
 		Conta.total++;
 		//System.out.println("O total de códigos é "+ Conta.total);
@@ -43,8 +45,8 @@ public class Conta {
 	
 	public boolean transfere(double valor, Conta contaDeDestino) {
 		
-		if(this.saldo>=valor) {
-			this.saldo -=valor;
+		if(this.saca(valor)) {
+			
 			contaDeDestino.deposita(valor);
 			return true;
 		}
